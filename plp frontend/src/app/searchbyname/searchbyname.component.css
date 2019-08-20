@@ -1,0 +1,43 @@
+
+p{
+    align-items: center;
+    color: black;
+    font-size: 15pt;
+    font-weight: bold;
+}
+input{
+    block-size: 45px;
+    color: black;
+    border-color: black;
+    margin-left: 420pt;
+    font-size: 15pt;
+    border-radius: 5pt;
+    width: 300px;
+  }
+  button{
+      block-size: 45px;
+    margin-left: 480pt;
+
+  }
+  .a{
+    margin-left: 300pt;
+    border-color: black; 
+    background-color:cornflowerblue;
+  }
+  .b{
+    margin-left: 300pt;
+    border-color: black; 
+    background-color:cornflowerblue;
+  }
+  .c{
+    margin-left: 420pt;
+    font-size:18pt;
+    font-weight: bold;
+    color:red;
+    size: 10pt;
+  }
+  .p1{
+    color: black;
+    margin-left: 280pt;
+    font-size: 15pt;
+  }

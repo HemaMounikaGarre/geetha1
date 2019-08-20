@@ -1,0 +1,22 @@
+li{
+    font-size: 22pt;
+    margin-left: 200pt;  
+    font-family: 'Times New Roman', Times, serif;
+}
+nav{
+    background-color:rgb(230, 154, 91);
+   margin-top: 60pt;
+
+
+}
+
+.activePage a{
+    color:black !important
+}
+.d{
+    color: rgb(0, 0, 0);
+    font-family:cursive;
+    font-size: 35pt;
+    margin-left: 400pt;
+    font-weight: bolder;
+}

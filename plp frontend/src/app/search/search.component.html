@@ -1,0 +1,65 @@
+<html>
+<form #userForm="ngForm">
+    <div class="container">
+
+        <div class="form-group" [class.has-error]="storeid.invalid && storeid.touched" [class.has-success]="storeidControl.valid">
+            <input type="text" required id="storeid" #storeidRef='ngModel' pattern="[0-9]+" placeholder="Enter store id" name="storeid"
+                [(ngModel)]="storeid" class="form-control" #storeidControl="ngModel">
+            <div *ngIf="storeidRef.errors && (storeidRef.dirty || storeidRef.touched)">
+
+
+                <div style="color: black;">
+                    <p class="p1">Store id should be in digits</p>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+        <div class="form-group" [class.has-error]="orderid.invalid && orderid.touched" [class.has-success]="orderidControl.valid">
+            <input type="text" required id="orderid" #idRef='ngModel' pattern="[0-9]+" placeholder="Enter order Id" name="orderid" [(ngModel)]="orderid"
+                class="form-control" #orderidControl="ngModel">
+            <div *ngIf='idRef.errors && idRef.touched'>
+
+                <div [hidden]='!idRef.errors.pattern'>
+                    <p class="p1">Invalid order ID</p>
+                </div>c
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <button class="btn btn-primary" [disabled]="!userForm.valid" (click)="getDetails(storeid,orderid)" style="margin-left: 510pt">Search</button>
+        <br/>
+        <br/>
+        <div class="a" *ngFor="let i of data.purchaseDetails.item">
+            <br/>
+
+            <p>ItemId: {{i.itemID}}</p>
+            <p>ItemName: {{i.itemName}}</p>
+            <p>Amount: {{i.amount}}</p>
+            <p>Quantity: {{i.quantity}}</p>
+        </div>
+        <div class="a" *ngIf=a>
+
+            <p>DeliveryValue: {{data.delivery.deliveryvalue}}</p>
+            <p>DeliveryStatus:{{data.delivery.deliveryStatus}}</p>
+            <p>
+                Update Status:
+                <br/>
+                <br/>
+                <input class="c" type="text" name="deliveryStatus" [(ngModel)]="deliveryStatus">
+                <br/>
+                <br/>
+
+                <button class="btn btn-success" style="margin-left: 120pt" type="button" name="update" (click)="update(storeid,orderid,deliveryStatus)">Update</button>
+
+            </p>
+            <br/>
+        </div>
+
+        <br/>
+
+    </div>
+</form>
+
+</html>

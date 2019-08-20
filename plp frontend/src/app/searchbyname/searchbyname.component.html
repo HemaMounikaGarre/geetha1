@@ -1,0 +1,41 @@
+<html>
+<form #userForm="ngForm">
+  <div class="container">
+    <div class="form-group" [class.has-error]="itemname.invalid && itemname.touched" [class.has-success]="itemnameControl.valid">
+      <input type="text" required id="itemname" #nameRef='ngModel' pattern="[A-Za-z]+" placeholder="Enter Item Name" name="itemname" [(ngModel)]="itemname"
+        class="form-control" #itemnameControl="ngModel">
+        <div *ngIf='nameRef.errors && nameRef.touched'>
+            <div  class="c" [hidden]='!nameRef.errors.required' >
+                Please Enter an Item  Name
+            </div>
+            <div class="c" [hidden]='!nameRef.errors.pattern'>
+                Name should be of characters
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+
+    <button class="btn btn-primary"  [disabled]="!userForm.valid" (click)="getDetailsByName(itemname)">Search</button>
+    <table>
+
+      <br/>
+      <br/>
+      <div class="a" *ngFor="let r of result">
+        <p>OrderId:{{r.orderid}}</p>
+        <div class="b" *ngFor="let r1 of r.item">
+          <p> ItemName:{{r1.itemName}} </p>
+          <p> ItemId:{{r1.itemID}}</p>
+          <p> Amount:{{r1.amount}}</p>
+          <p> Quantity:{{r1.quantity}}</p>
+        </div>
+        <p>TotalAmount:{{r.totalAmount}}</p>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+    </table>
+  </div>
+</form>
+
+</html>

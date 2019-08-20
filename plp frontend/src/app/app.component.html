@@ -1,0 +1,19 @@
+<!-- <app-search></app-search> -->
+<html>
+  <p class="d">Welcome..!</p>
+<nav class="navbar navabar-default">
+  <ul class="nav navbar-nav" class="activePage">
+    <li class="nav-item" >
+      <a class="nav-link" routerLink='/searchbyname' [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">
+        <p>Search By Item Name</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/searchbyid' routerLinkActive="active">
+        <p>Search By ID</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+</html>
